@@ -1,0 +1,11 @@
+[
+  {
+    "id": "admin-1",
+    "username": "admin",
+    "email": "dipanshusrivastava.735@gmail.com",
+    "name": "Deepanshu Srivastava",
+    "role": "admin",
+    "password": "$2b$10$U9mt97FI/NqbvB80BokZU.A27.ZzMEF9enFQ9K4a9aO/4EDgeUYom",
+    "createdAt": "2026-10-08T08:19:25.640Z"
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Alex Developer",
+    "email": "alex@testmail.com",
+    "subject": "Collaboration Opportunity",
+    "message": "Hello! I love your portfolio and would like to collaborate on an open source project.",
+    "isRead": false,
+    "_id": "6ac7bf1b670b463f2ec3d3d4",
+    "createdAt": "2026-10-08T16:04:43.803Z",
+    "updatedAt": "2026-10-08T16:04:43.803Z",
+    "__v": 0
+  },
+  {
+    "name": "Alex DeveloperAlex Developer",
+    "email": "alex@testmail.com",
+    "subject": "Collaboration Opportunity",
+    "message": "Hello! I love your portfolio and would like to collaborate on an open source project.",
+    "isRead": false,
+    "_id": "6ac7be7b670b463f2ec3d3d3",
+    "createdAt": "2026-10-08T16:02:03.956Z",
+    "updatedAt": "2026-10-08T16:02:03.956Z",
+    "__v": 0
+  },
+  {
+    "name": "Alex Developer",
+    "email": "alex@testmail.com",
+    "subject": "Collaboration Opportunity",
+    "message": "Hello! I love your portfolio and would like to collaborate on an open source project.",
+    "isRead": false,
+    "_id": "6ac7bde8670b463f2ec3d3d2",
+    "createdAt": "2026-10-08T15:59:36.212Z",
+    "updatedAt": "2026-10-08T15:59:36.212Z",
+    "__v": 0
+  },
+  {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "subject": "Hello Developer",
+    "message": "This is a test message.",
+    "isRead": false,
+    "_id": "6ac7bbefd4edff6a087c9cb7",
+    "createdAt": "2026-10-08T15:51:11.984Z",
+    "updatedAt": "2026-10-08T15:51:11.984Z",
+    "__v": 0
+  },
+  {
+    "name": "Tester2",
+    "email": "test2@example.com",
+    "subject": "Inquiry2",
+    "message": "Hi2",
+    "isRead": false,
+    "_id": "6ac7baa0d4edff6a087c9cb6",
+    "createdAt": "2026-10-08T15:45:36.432Z",
+    "updatedAt": "2026-10-08T15:45:36.432Z",
+    "__v": 0
+  },
+  {
+    "name": "Tester",
+    "email": "test@example.com",
+    "subject": "Inquiry",
+    "message": "Hi",
+    "isRead": false,
+    "_id": "6ac7ba98d4edff6a087c9cb5",
+    "createdAt": "2026-10-08T15:45:28.303Z",
+    "updatedAt": "2026-10-08T15:45:28.303Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ac7b89dd4edff6a087c9cb4",
+    "name": "ramji",
+    "email": "DIPANSHUSRIVASTAVA.735@GMAIL.COM",
+    "subject": "sitaram",
+    "message": "cccccccccc",
+    "isRead": false,
+    "createdAt": "2026-10-08T15:37:01.850Z",
+    "updatedAt": "2026-10-08T15:37:01.850Z",
+    "__v": 0
+  }
+]

@@ -1,71 +1,96 @@
-import { wrapAsync } from "./utils/WrapAsync.js";
-import express from "express";
-const app = express();
-import "dotenv/config";
-import nodemailer from "nodemailer";
+﻿import express from "express";
 import cors from "cors";
+import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cors(
-    {
-        origin: process.env.FRONTEND_URL
-    }
-));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-app.get("/", (req, res) => {
-    res.send("Hello World!");
+dotenv.config({ path: path.join(__dirname, ".env") });
+
+import { connectDB } from "./config/db.js";
+import { storageService } from "./services/storageService.js";
+import { wrapAsync } from "./utils/WrapAsync.js";
+import authRoutes from "./routes/authRoutes.js";
+import portfolioRoutes from "./routes/portfolioRoutes.js";
+import contactRoutes, { handleContactSubmit } from "./routes/contactRoutes.js";
+
+const app = express();
+const PORT = process.env.PORT || 4000;
+
+// Connect to MongoDB Atlas and initialize storage
+connectDB().then(() => {
+  storageService.init();
+}).catch(err => {
+  console.error("MongoDB start error:", err.message);
 });
 
-
-app.post("/mail-send",wrapAsync( async (req, res) => {
-    try {
-        const { name, email, message, subject } = req.body;
-
-        if (!name || !email || !message || !subject) {
-            return res.status(400).json({
-                success: false,
-                message: "Name, Email and Message required!"
-            });
-        }
-
-        const transporter = nodemailer.createTransport({
-            host: process.env.SMTP_HOST,
-            port: +process.env.SMTP_PORT,
-            secure: false,
-            auth: {
-                user: process.env.SMTP_USER,
-                pass: process.env.SMTP_PASS
-            }
-        });
-
-        await transporter.sendMail({
-            from: `"${name} via Website" <${process.env.SMTP_USER}>`,
-            to: process.env.RECEIVER_EMAIL, // jaha email aani chahiye
-            replyTo: email,
-            subject: subject,
-            text: `
-                 Name: ${name}
-                 Email: ${email}
-                 Message: ${message}
-      `
-        });
-
-        res.status(200).json({
-            status: 200,
-            success: true,
-            message: "Message sent successfully!"
-        });
-    } catch (error) {
-        console.error("Mail Send Error:", error);
-        res.status(500).json({
-            success: false,
-            message: "Something went wrong while sending the message!"
-        });
-    }
+// CORS configuration - allow frontend dev server and production
+app.use(cors({
+  origin: true,
+  credentials: true
 }));
 
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
-app.listen(4000, (req, res) => {
-    console.log("Example app listening on port 4000");
+// Request logger for debugging
+app.use((req, res, next) => {
+  console.log(`[${new Date().toLocaleTimeString()}] ${req.method} ${req.url}`);
+  next();
 });
+
+// Root route
+app.get("/", (req, res) => {
+  res.json({
+    name: "Portfolio Dynamic Backend API (MongoDB Connected)",
+    status: "Active",
+    version: "2.0.0",
+    database: "MongoDB Atlas",
+    endpoints: [
+      "/api/portfolio",
+      "/api/portfolio/skills",
+      "/api/portfolio/experience",
+      "/api/auth/login",
+      "/api/contact",
+      "/mail-send",
+      "/api/health"
+    ]
+  });
+});
+
+// Health check endpoint
+app.get("/api/health", (req, res) => {
+  res.status(200).json({
+    status: "ok",
+    message: "Portfolio Dynamic Backend API is running smoothly!",
+    database: storageService.isDbReady() ? "Connected to MongoDB Atlas" : "Local Cache Ready",
+    port: PORT,
+    timestamp: new Date().toISOString()
+  });
+});
+
+// Core Dynamic API routes
+app.use("/api/auth", authRoutes);
+app.use("/api/portfolio", portfolioRoutes);
+app.use("/api/contact", contactRoutes);
+
+// Direct /mail-send endpoint for backward compatibility
+app.post("/mail-send", wrapAsync(handleContactSubmit));
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error("Server Error:", err);
+  res.status(err.status || 500).json({
+    success: false,
+    message: err.message || "Internal Server Error"
+  });
+});
+
+app.listen(PORT, () => {
+  console.log(`🚀 Portfolio Backend running on http://localhost:${PORT}`);
+  console.log(`📦 MongoDB Atlas dynamic CMS endpoints live`);
+});
+
+export default app;

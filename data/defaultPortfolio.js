@@ -1,0 +1,175 @@
+﻿export const defaultPortfolioData = {
+  profile: {
+    name: "Deepanshu Srivastava",
+    avatar: "/assets/side.jpeg",
+    profession: "Full Stack Developer"
+  },
+  navigation: [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "skill", label: "Skills" },
+    { id: "resume", label: "Resume" },
+    { id: "projects", label: "Projects" },
+    { id: "services", label: "Services" },
+    { id: "contact", label: "Contact" }
+  ],
+  sections: {
+    home: {
+      title: "Deepanshu Srivastava",
+      bgImage: "/assets/back2.jpg",
+      heroEnabled: true,
+      typewriterWords: ["Full Stack Developer", "MERN Specialist", "Next.js & React Architect", "UI/UX Craftsman"],
+      content: "This is my digital world, where creativity meets logic."
+    },
+    about: {
+      title: "About Me",
+      content: "Hi, I'm Deepanshu Srivastava, a dedicated Full-Stack Developer from Lucknow with a passion for creating innovative web solutions that solve real-world problems.\nAs a BCA graduate specializing in MERN stack development, I bring over a year of professional experience building scalable, efficient, and user-centric applications.\nCurrently working as a Full Stack Developer at Gahmar Admark Solution Private Limited, I architect robust APIs and craft responsive interfaces using Next.js, Node.js, and MongoDB.\nMy journey in software development has been shaped by diverse experiences at Hanumant Technology and Xzect Labs, where I've built everything from AI-powered chatbots to complex ticketing systems and real-time email platforms.",
+      imageside: {
+        content: "I don't just write code—I create solutions. Whether it's developing a real-time email module with Socket.io, integrating Razorpay payment gateways for seamless transactions, or building a coupon redemption system with membership logic, I thrive on transforming complex requirements into elegant, functional applications.",
+        position: "Full stack Developer"
+      },
+      imageHeading: [
+        { title: "Dob", content: "05 April 2003" },
+        { title: "Degree", content: "Bachelor of Computer Application" },
+        { title: "University", "content": "Lucknow University" },
+        { title: "Phone", content: "+91-708-436-1077" },
+        { title: "Email", content: "dipanshusrivastava.735@gmail.com" },
+        { title: "City", content: "Barabanki" }
+      ],
+      skills: {
+        title: "Skills & Technical Stack",
+        content: [
+          { title: "React.js & Next.js", percentage: "95" },
+          { title: "Node.js & Express REST APIs", percentage: "90" },
+          { title: "MongoDB & Mongoose DB", percentage: "90" },
+          { title: "Tailwind CSS & Material UI", percentage: "95" },
+          { title: "TypeScript & JavaScript ES6+", percentage: "90" },
+          { title: "React Native Mobile Apps", percentage: "80" }
+        ]
+      }
+    },
+    projects: {
+      title: "Featured Projects",
+      subtitle: "A showcase of full-stack web applications, APIs, and real-world systems I've built.",
+      enabled: true,
+      list: [
+        {
+          id: "proj-1",
+          title: "Full-Stack Social Platform",
+          description: "Full-featured social web application with user authentication, real-time post feeds, media upload management, like and comment interactions, and responsive UI.",
+          image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop",
+          technologies: ["React.js", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+          liveUrl: "https://react-port-folio-pi.vercel.app/",
+          githubUrl: "https://github.com/RAMJI735"
+        },
+        {
+          id: "proj-2",
+          title: "AI Chat & Interactive Platform",
+          description: "Intelligent chatbot service integrating custom LLM responses, ticket issue management, conversation history persistence, and accessible Material UI components.",
+          image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
+          technologies: ["Next.js", "Material UI", "Node.js", "AI APIs", "MongoDB"],
+          liveUrl: "",
+          githubUrl: "https://github.com/RAMJI735"
+        },
+        {
+          id: "proj-3",
+          title: "Collaborative Notebook Application",
+          description: "Interactive note-taking suite with markdown authoring, live tag filtering, category management, and encrypted local/cloud data sync.",
+          image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=800&auto=format&fit=crop",
+          technologies: ["React.js", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
+          liveUrl: "",
+          githubUrl: "https://github.com/RAMJI735"
+        }
+      ]
+    },
+    services: {
+      title: "Services & Capabilities",
+      content: "UI/UX Design, Full-Stack Web Development, Mobile Apps",
+      list: [
+        {
+          id: "srv-1",
+          title: "Frontend Development",
+          description: "Design modern, hyper-responsive, interactive interfaces with React, Next.js, and Tailwind CSS.",
+          image: "frontend.jpg"
+        },
+        {
+          id: "srv-2",
+          title: "Backend & API Architecture",
+          description: "Build robust, scalable RESTful & GraphQL APIs using Node.js, Express, MongoDB, and secure authentication.",
+          image: "backend.jpg"
+        },
+        {
+          id: "srv-3",
+          title: "Mobile App Development",
+          description: "Develop seamless cross-platform mobile apps for iOS and Android using React Native.",
+          image: "native.jpg"
+        }
+      ]
+    },
+    contact: {
+      title: "Get In Touch",
+      content: "Feel free to reach out anytime. I'm always open for collaboration and exciting new opportunities!",
+      number: "+91-708-436-1077",
+      email: "dipanshusrivastava.735@gmail.com",
+      address: "Barabanki, Uttar Pradesh, India",
+      social: [
+        { name: "Twitter", icon: "FaTwitter", link: "https://twitter.com" },
+        { name: "Facebook", icon: "FaFacebookF", link: "https://facebook.com" },
+        { name: "Instagram", icon: "FaInstagram", link: "https://instagram.com" },
+        { name: "LinkedIn", icon: "FaLinkedinIn", link: "https://linkedin.com" }
+      ]
+    },
+    resume: {
+      title: "Resume & Career Path",
+      "btn-name": "Download CV",
+      cvUrl: "/resume.docx",
+      summary: {
+        name: "Deepanshu Srivastava",
+        role: "Full Stack MERN Developer",
+        description: "Full-stack developer with strong UI/UX understanding, passionate about building scalable, secure, and delightful digital products.",
+        location: "Lucknow, Uttar Pradesh",
+        phone: "+91 7084361077",
+        email: "dipanshusrivastava.735@gmail.com"
+      },
+      education: [
+        {
+          degree: "Bachelor of Computer Applications (BCA)",
+          year: "2021 - 2024",
+          university: "University of Lucknow",
+          details: "Focused on Web Technologies, Software Engineering, Database Systems. Specialized in MERN stack development and problem-solving."
+        }
+      ],
+      experience: [
+        {
+          role: "Full Stack Developer",
+          year: "April 2025 - Present",
+          company: "Gahmar Admark Solutions Pvt Limited, Lucknow",
+          points: [
+            "Architected full-stack enterprise modules using Next.js, Node.js, and MongoDB.",
+            "Built responsive UI components using Next.js & Material UI with high performance.",
+            "Integrated secure REST APIs, role-based auth, and third-party gateways."
+          ]
+        },
+        {
+          role: "Full Stack Developer Intern",
+          year: "September 2024 - March 2025",
+          company: "Hanumant Technologies Private Limited, Lucknow",
+          points: [
+            "Built dynamic interactive UI components using React.js and Tailwind CSS.",
+            "Developed backend services and database models using Node.js & MongoDB.",
+            "Built a collaborative Notebook Application with rich note taking and tag filtering."
+          ]
+        },
+        {
+          role: "Full Stack Developer Intern",
+          year: "June 2024 - August 2024",
+          company: "Xzect Labs Private Limited, Remote",
+          points: [
+            "Developed AI-powered chatbot solutions integrated with modern web interfaces.",
+            "Built clean and accessible UI components with Next.js and Material UI."
+          ]
+        }
+      ]
+    }
+  }
+};
